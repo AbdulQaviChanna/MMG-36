@@ -1,17 +1,32 @@
-class Task2{
+import java.util.Scanner;
+cmd
 
-public static void main (String[] args){
-System.out.println ("This is the long string that is the" +
-		    "concatenation of two shorter strings.");
+public class Task1 {
+    public static void main(String[] args) {
+        char[] const_arr = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
 
-System.out.println ("first computer was invented about" +
-		    "55 years ago.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        char user_inp = scanner.next().charAt(0);
 
-System.out.println ("8 plus 5 is" + 8 + 5);
-System.out.println ("8 plus 5 is" + (8+5));
-System.out.println (8 + 5 + "equals 8 plus 5.");
+       
+        boolean isConsonant = false;
+
+       
+        for (char c : const_arr) {
+            if (c == user_inp) {
+                isConsonant = true;
+                break;
+            }
+        }
+
+       
+        if (isConsonant) {
+            System.out.println(user_inp + " is a consonant.");
+        } else {
+            System.out.println(user_inp + " is not a consonant.");
+        }
+
+        scanner.close();
+    }
 }
-
-}
-
-

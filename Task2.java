@@ -1,17 +1,27 @@
-class Task2{
+import java.util.Scanner;
 
-public static void main (String[] args){
-System.out.println ("This is the long string that is the" +
-		    "concatenation of two shorter strings.");
+public class Task2 {
+    public static void main(String[] args) {
+        int[] arr = new int[10];
 
-System.out.println ("first computer was invented about" +
-		    "55 years ago.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 10 integer values:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter value for index " + i + ": ");
+            arr[i] = scanner.nextInt();
+        }
 
-System.out.println ("8 plus 5 is" + 8 + 5);
-System.out.println ("8 plus 5 is" + (8+5));
-System.out.println (8 + 5 + "equals 8 plus 5.");
+        int sum = 0;
+        System.out.print("Multiples of 4 in the array: ");
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 4 == 0) {
+                System.out.print(arr[i] + " ");
+                sum += arr[i];
+            }
+        }
+
+        System.out.println("\nSum of multiples of 4: " + sum);
+
+        scanner.close();
+    }
 }
-
-}
-
-
