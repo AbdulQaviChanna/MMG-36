@@ -1,31 +1,36 @@
-import java.util.Scanner;
-
 public class Task4 {
+    
     public static void main(String[] args) {
-        String[] names = new String[6];
+        
+        int[] array = new int[10];
+        int i = 0;
+        
+        do {
+            array[i] = (i + 1) * (i + 1);  
+            i++;
+        } while (i < array.length);
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter 6 names:");
-        for (int i = 0; i < names.length; i++) {
-            System.out.print("Enter name for position " + (i + 1) + ": ");
-            names[i] = scanner.nextLine();
+        System.out.print("Array: ");
+        for (int num : array) {
+            System.out.print(num + " ");
         }
-
-        boolean found = false;
-        for (String name : names) {
-            if (name.equalsIgnoreCase("Ali")) {
-                found = true;
-                break;
+        System.out.println();
+        int sumOfOdds = 0;
+        int index = 0;
+        
+        while (index < array.length) {
+            int currentNumber = array[index];
+            
+            if (currentNumber % 2 != 0) {
+                sumOfOdds += currentNumber;  
             }
+            if (currentNumber == 81) {
+                break;  
+            }
+
+            index++;
         }
 
-        if (found) {
-            System.out.println("\"Ali\" is present in the array.");
-        } else {
-            System.out.println("\"Ali\" is not present in the array.");
-        }
-
-        scanner.close();
+        System.out.println("Sum of odd numbers (up to 81): " + sumOfOdds);
     }
 }
